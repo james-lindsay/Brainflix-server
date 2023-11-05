@@ -35,7 +35,7 @@ router.post("/", (req, res) => {
       likes: likes,
       views: views,
       timestamp: timestamp,
-      image: image,
+      image: "http://localhost:8080/images/Upload-video-preview.jpg",
     };
     const videosJson = fs.readFileSync("./data/videos.json");
     const parsedVideos = JSON.parse(videosJson);
