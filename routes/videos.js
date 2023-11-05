@@ -7,15 +7,12 @@ router.get("/", (_req, res) => {
     const videoDetails = fs.readFileSync("./data/videos.json");
     const parsedVideoDetails = JSON.parse(videoDetails);
     res.json(parsedVideoDetails);
-    console.log(parsedVideoDetails)
 });
 
 router.get("/:id", (req, res) => {
     const videoId = req.params.id;
     const videoDetails = fs.readFileSync("./data/videos.json");
     const parsedVideoDetails = JSON.parse(videoDetails);
-    
-    // Find the video with the specified ID
     const selectedVideo = parsedVideoDetails.find(video => video.id === videoId);
 
     if (selectedVideo) {
